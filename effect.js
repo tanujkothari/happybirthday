@@ -4,6 +4,7 @@ $(window).load(function(){
 });
 $('document').ready(function(){
 		var vw;
+		$("#iframe").css("display","none");
 		$(window).resize(function(){
 			 vw = $(window).width()/2;
 			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -179,6 +180,8 @@ $('document').ready(function(){
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
+					$("#video").css("display", "block");
+	
 				});
 				
 			}
@@ -196,6 +199,14 @@ $('document').ready(function(){
 });
 
 
-
+$("#video").click(function(){
+	$(this).fadeOut('slow');
+		$('.cake').fadeOut('fast').promise().done(function(){
+			$('#iframe').css('display','block');
+		})
+		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+			$('.cake').fadeIn('fast');	
+		});
+})
 
 //alert('hello');
