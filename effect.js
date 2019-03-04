@@ -1,10 +1,12 @@
 $(window).load(function(){
 	$('.loading').fadeOut('fast');
 	$('.container').fadeIn('fast');
+	$("#iframe").css("display","none");
 });
+$("#iframe").css("display","none");
 $('document').ready(function(){
 		var vw;
-		$("#iframe").css("display","none");
+		
 		$(window).resize(function(){
 			 vw = $(window).width()/2;
 			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -204,8 +206,9 @@ $("#video").click(function(){
 		$('.cake').fadeOut('fast').promise().done(function(){
 			$('#iframe').css('display','block');
 		})
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
+		$(this).fadeOut('slow').delay(60000).promise().done(function(){
 			$('.cake').fadeIn('fast');	
+			$('#iframe').css('display','none');
 		});
 })
 
